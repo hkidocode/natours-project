@@ -59,6 +59,7 @@ body {
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+    /* backface-visibility: hidden;  To fix the shaking of the animations if it exist*/
 }
 
 .heading-primary-main {
@@ -66,6 +67,7 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation: moveToLeft 1.2s ease-in-out;
 }
 
 .heading-primary-sub {
@@ -73,4 +75,38 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation: moveToRight 1.2s ease-in-out;
+}
+
+/* H1 Animations */
+@keyframes moveToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    70% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    70% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
