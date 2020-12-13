@@ -1,0 +1,183 @@
+
+// Colors
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark:#28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+/* Reset */
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* using pixels in font size, it just be 10px (for example) no matter what the user has as a default font size for his browser, so problem to see our website properly ==> bad practice.
+    as a solution, we use percentage to translate the font size given by the browser to percentage */
+    /* 10px = (10/16) * 100 = 62.5% */
+    font-size: 62.5%; 
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    /* backface-visibility: hidden;  To fix the shaking of the animations if it exist*/
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveToLeft 1.2s ease-in-out;
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveToRight 1.2s ease-in-out;
+}
+
+/* Main Heading Animations */
+@keyframes moveToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    70% {
+        transform: translateX(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    
+    70% {
+        transform: translateX(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn {
+    font-size: 1.6rem;
+     text-transform: uppercase;
+     text-decoration: none;
+     display: inline-block;
+     border-radius: 10rem;
+     transition: transform .2s ease;
+     position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+}
+
+.btn--white {
+    background-color: $color-white;
+    color:$color-grey-dark;
+    padding: 1.5rem 4rem;
+    animation: moveToTop .5s ease-in-out .7s backwards;
+}
+
+.btn--white::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color:$color-white;
+    transition: all .4s ease;
+}
+
+.btn--white:hover::after {
+    transform: scale(1.4, 1.6);
+    opacity: 0;
+}
+
+/* Main Button Animation */
+@keyframes moveToTop {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "natours-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkidocode/natours-project.git"
+  },
+  "author": "Mustapha Kadouri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkidocode/natours-project/issues"
+  },
+  "homepage": "https://github.com/hkidocode/natours-project#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
