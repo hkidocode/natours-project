@@ -1,0 +1,23 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* using pixels in font size, it just be 10px (for example) no matter what the user has as a default font size for his browser, so problem to see our website properly ==> bad practice.
+    as a solution, we use percentage to translate the font size given by the browser to percentage */
+  /* 10px = 1rem = (10/16) * 100 = 62.5% */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+}

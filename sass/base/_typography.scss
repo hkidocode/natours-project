@@ -1,0 +1,23 @@
+// Primary heading
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  /* backface-visibility: hidden;  To fix the shaking of the animations if it exist*/
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveToLeft 1.2s ease-in-out;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveToRight 1.2s ease-in-out;
+  }
+}
