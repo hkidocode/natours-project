@@ -1,5 +1,5 @@
 @import 'abstracts/variables', 'abstracts/mixins', 'abstracts/functions';
-@import 'base/base', 'base/typography', 'base/typography', 'base/utilities';
-@import 'components/button';
+@import 'base/base', 'base/typography', 'base/typography', 'base/utilities', 'base/animation';
+@import 'components/button', 'components/composition';
 @import 'layout/header';
 @import 'pages/home';
